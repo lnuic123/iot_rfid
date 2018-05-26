@@ -22,6 +22,7 @@ Route::get('/admin', function () {
 });
 Route::get('/test', 'SerialController@test');
 Route::get('/admin', 'SerialController@adminLogin');
+Route::post('/user', 'SerialController@userLogin');
 Route::get('/admin/{room}', ['uses' =>'RoomController@get']);
 
 Auth::routes();
