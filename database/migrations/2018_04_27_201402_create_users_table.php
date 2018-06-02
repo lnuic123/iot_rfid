@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('type');
             $table->string('rfid');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

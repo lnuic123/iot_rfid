@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'Controller@index');
+Route::get('/userlogins', 'SerialController@showUserLogins');
+Route::post('/userlogouts', 'SerialController@userLogout');
 
 Route::get('/admin', function () {
     return view('admin');
@@ -25,6 +27,11 @@ Route::get('/admin', 'SerialController@adminLogin');
 Route::post('/user', 'SerialController@userLogin');
 Route::get('/admin/{room}', ['uses' =>'RoomController@get']);
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/rfidlogin', 'SerialController@rfidlogin');
+
+

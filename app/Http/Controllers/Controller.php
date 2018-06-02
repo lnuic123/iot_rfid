@@ -13,8 +13,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     function index(){
-    	$rooms = Room::all();
-    	return view('index')->with('rooms', $rooms);
+    	return redirect('login');
     }
     function admin(){
     	$rooms = Room::all();
