@@ -12,21 +12,6 @@ use DB;
 use Auth;
 class SerialController extends Controller
 {
-	public function test()
-	{
-		$serialPort = new SerialPort(new SeparatorParser(), new TTYConfigure());
-
-		$serialPort->open("/dev/ttyUSB0");
-		while ($data = $serialPort->read()) {
-		    //dd($data);
-		    return $data;
-
-		    /*if ($data === "OK") {
-		        $serialPort->write("1\n");
-		        $serialPort->close();
-		    }*/
-		}
-	}
 	public function adminLogin(){
 		$serialPort = new SerialPort(new SeparatorParser(), new TTYConfigure());
 

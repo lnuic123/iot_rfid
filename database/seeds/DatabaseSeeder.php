@@ -64,24 +64,228 @@ class DatabaseSeeder extends Seeder
         ]);
 
 //logins---------------------------------------------------------------------------------------------------------------
-        for($i = 1; $i < 6; $i++){
-            for($j = 1; $j < 6; $j++){
-                for($k=1; $k<=30; $k++){
-                    DB::table('logins')->insert([
-                        'user_id' => $i,
-                        'room_id' => $j,
-                        'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($k)->addMinutes(rand(-20, 20)),
-                    ]);
-                }
-            }
-        }
-        //logouts---------------------------------------------------------------------------------------------------------------
 
-        for($i = 1; $i <= 10; $i++){
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '1',
+                'room_id' => '1',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '1',
+                'room_id' => '2',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '1',
+                'room_id' => '3',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '1',
+                'room_id' => '4',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '1',
+                'room_id' => '5',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+//
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '2',
+                'room_id' => '1',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 09')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '2',
+                'room_id' => '2',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 09')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '2',
+                'room_id' => '3',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 09')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '2',
+                'room_id' => '4',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 09')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '2',
+                'room_id' => '5',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 09')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+
+//
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '3',
+                'room_id' => '1',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 10')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '3',
+                'room_id' => '2',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 10')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '3',
+                'room_id' => '3',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 10')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '3',
+                'room_id' => '4',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 10')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '3',
+                'room_id' => '5',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 10')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+
+
+//
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '4',
+                'room_id' => '1',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '4',
+                'room_id' => '2',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '4',
+                'room_id' => '3',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '4',
+                'room_id' => '4',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '4',
+                'room_id' => '5',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+
+
+//
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '5',
+                'room_id' => '1',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '5',
+                'room_id' => '2',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '5',
+                'room_id' => '3',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '5',
+                'room_id' => '4',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+
+        for($i=1; $i<=50; $i++){
+        DB::table('logins')->insert([
+                'user_id' => '5',
+                'room_id' => '5',
+                'time' => \Carbon\Carbon::createFromFormat('Y-m-d H', '2018-05-21 08')->addDays($i)->addMinutes(rand(-20, 20)),
+            ]);
+        }
+        //rooms-----------------------------------------------------------------------------------------------------------------
+
+        for($i = 1; $i <= 5; $i++){
             DB::table('rooms')->insert([
                 'name' => 'Soba '.$i
             ]);
         }
+
+        //logouts---------------------------------------------------------------------------------------------------------------
         for($i=1; $i<=50; $i++){
         DB::table('logouts')->insert([
                 'user_id' => '1',

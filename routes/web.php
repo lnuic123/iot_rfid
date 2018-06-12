@@ -22,11 +22,16 @@ Route::post('/userlogouts', 'SerialController@userLogout');
 Route::get('/admin', function () {
     return view('admin');
 });
-Route::get('/test', 'SerialController@test');
+
 Route::get('/admin', 'SerialController@adminLogin');
 Route::post('/user', 'SerialController@userLogin');
-Route::get('/admin/{room}', ['uses' =>'RoomController@get']);
 
+
+Route::get('/admin/{room}/stats', 'RoomController@stats');
+
+Route::get('/admin/{room}/stats/users', 'RoomController@users');
+Route::get('/admin/{room}/stats/userlogins', 'RoomController@userlogins');
+Route::get('/admin/{room}/stats/userlogouts', 'RoomController@userlogouts');
 
 Auth::routes();
 

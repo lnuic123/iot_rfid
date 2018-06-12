@@ -25,7 +25,7 @@
 
     <div class="roomButtons">
         @foreach($rooms as $room)
-        	<a href="/admin/{{$room->id}}" class="btn btn-default" style="width: 200px;height: 100px;padding-top: 50px">{{$room->name}}</a>
+        	<a href="/admin/{{$room->id}}/stats" class="btn btn-default" style="width: 200px;height: 100px;padding-top: 35px">{{$room->name}}</a>
         @endforeach
     </div>
 
