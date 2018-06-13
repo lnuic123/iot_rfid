@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
+<a href="/admin/{{$room}}/stats" class="btn btn-primary" style="margin-bottom: 20px">Povratak</a>
   <h3>Dolaznost korisnika u sobu {{$room}}</h3>
  <div class="col-md-7 col-md-offset-1">
  </div>
  <div class="col-md-2 col-md-offset-0">
  </div>
-
 <script type="text/javascript">
 
     var w = 500,                        //width

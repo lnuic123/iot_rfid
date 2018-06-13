@@ -12,6 +12,7 @@
 @section('content')
 
 <body>
+<a href="/admin/{{$room}}/stats" class="btn btn-primary" style="margin-bottom: 20px">Povratak</a>
   <div class="container" style="width: 1000px">
     <canvas id="myChart"></canvas>
   </div>
@@ -85,14 +86,14 @@
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Vrijeme dolaska'
+                    labelString: 'Vrijeme prijave/odjave'
                 }
             }
         ]
         },
     title:{
       display:true,
-      text:'Vrijeme dolaska korisnika',
+      text:'Vrijeme prijave/odjave korisnika',
       fontSize:25
     },
         legend:{
