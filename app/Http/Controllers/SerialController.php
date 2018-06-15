@@ -2,34 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use lepiaf\SerialPort\SerialPort;
-use lepiaf\SerialPort\Parser\SeparatorParser;
-use lepiaf\SerialPort\Configure\TTYConfigure;
-use Illuminate\Http\Request;
 use App\Room;
 use App\User;
-use DB;
 use Auth;
+use Carbon\Carbon;
+use DB;
+use Illuminate\Http\Request;
+use lepiaf\SerialPort\Configure\TTYConfigure;
+use lepiaf\SerialPort\Parser\SeparatorParser;
+use lepiaf\SerialPort\SerialPort;
 class SerialController extends Controller
 {
-	public function adminLogin(){
-		$serialPort = new SerialPort(new SeparatorParser(), new TTYConfigure());
+	public function adminLogin(Request $request){
+		if (!$request->session()->exists('rfid')) {
+		    $serialPort = new SerialPort(new SeparatorParser(), new TTYConfigure());
 
-		$serialPort->open("/dev/ttyUSB0");
-		while ($data = $serialPort->read()) {
-		    //dd($data);
-		    //return $data;
-			$data = substr($data,1,-2);
-			$user = User::where('type', 'admin')->where('rfid', $data)->get();
+			$serialPort->open("/dev/ttyUSB0");
+			while ($data = $serialPort->read()) {
+			    //dd($data);
+			    //return $data;
+				$data = substr($data,1,-2);
+				$user = User::where('type', 'admin')->where('rfid', $data)->get();
 
-	    	$rooms = Room::all();
-			if(count($user)){ //successful login
-		    	return view('admin')->with('rooms', $rooms);
-			}
-			else{ //failed login
-		    	return view('index')->with('rooms', $rooms);
+		    	$rooms = Room::all();
+				if(count($user)){ //successful login
+					$request->session()->put('rfid', true);
+			    	return view('admin')->with('rooms', $rooms);
+				}
+				else{ //failed login
+			    	return view('index')->with('rooms', $rooms);
+				}
 			}
 		}
+    	$rooms = Room::all();
+    	return view('admin')->with('rooms', $rooms);
+		
 	}
 	public function userLogin(Request $request)
 	{
@@ -47,7 +54,7 @@ class SerialController extends Controller
 	    	$logged_user = Auth::user();
 			if($logged_user->rfid == $data){
 			    DB::table('logins')->insert([ //storing new login
-					['user_id' => $logged_user->id, 'time' => date("Y-m-d h:m:s"), 'room_id' => $request->room]
+					['user_id' => $logged_user->id, 'time' => Carbon::now(), 'room_id' => $request->room]
 				]);
 
 		    	$rooms = Room::all();
@@ -89,6 +96,7 @@ class SerialController extends Controller
 			['user_id' => $logged_user->id, 'time' => date("Y-m-d h:m:s"), 'room_id' => $request->room]
 		]);
     	$rooms = Room::all();
+    	$request->session()->forget('rfid');
 		return view('index')->with('rooms', $rooms);
 	}
-}
+} 

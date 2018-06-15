@@ -18,10 +18,11 @@ Route::get('/', function () {
 Route::get('/', 'Controller@index');
 Route::get('/userlogins', 'SerialController@showUserLogins');
 Route::post('/userlogouts', 'SerialController@userLogout');
-
+/*
 Route::get('/admin', function () {
     return view('admin');
 });
+*/
 
 Route::get('/admin', 'SerialController@adminLogin');
 Route::post('/user', 'SerialController@userLogin');

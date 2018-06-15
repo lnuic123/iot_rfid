@@ -60,12 +60,15 @@ class RoomController extends Controller
             $date4[$i] = Carbon::createFromFormat('Y-m-d H:i:s', $login_dates4[$i]->time);
             $date5[$i] = Carbon::createFromFormat('Y-m-d H:i:s', $login_dates5[$i]->time);
 
+            $test1 = (int)$date1[$i]->format('h')*3600 + (int)$date1[$i]->format('i')*60 + (int)$date1[$i]->format('s');
+
+
             $data1[$i] = $date1[$i]->secondsSinceMidnight();
             $data2[$i] = $date2[$i]->secondsSinceMidnight();
             $data3[$i] = $date3[$i]->secondsSinceMidnight();
             $data4[$i] = $date4[$i]->secondsSinceMidnight();
             $data5[$i] = $date5[$i]->secondsSinceMidnight();
-
+            
             $date1[$i] = $date1[$i]->format('Y-m-d H:i:s');
             $date2[$i] = $date2[$i]->format('Y-m-d H:i:s');
             $date3[$i] = $date3[$i]->format('Y-m-d H:i:s');

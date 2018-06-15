@@ -104,7 +104,22 @@
           }
         },
         tooltips:{
-          enabled:true
+          enabled:true,
+          callbacks: {
+              title: function(tooltipItems, data) {
+                  //Return value for title
+                        return null;
+              },
+                    label: function(tooltipItems, data) { 
+                        var min = Math.floor( (tooltipItems.yLabel - Math.floor(tooltipItems.yLabel/3600)*3600)/60 );
+                        if(min>9){
+                          return data.datasets[tooltipItems.datasetIndex].label + ': ' + Math.floor(tooltipItems.yLabel/3600) + ":" +  min + ' ' + tooltipItems.xLabel.slice(0, -9);
+                        }
+                        else{
+                          return data.datasets[tooltipItems.datasetIndex].label + ': ' + Math.floor(tooltipItems.yLabel/3600) + ":0" +  min + ' ' + tooltipItems.xLabel.slice(0, -9);
+                        }
+                    }
+                }
         }
   }
 });
